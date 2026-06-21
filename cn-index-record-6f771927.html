@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>皇冠体育 · 再次发现</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background: #f2f4f6;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      color: #2c3e50;
+      line-height: 1.6;
+      padding: 2rem 1rem;
+    }
+
+    .container {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    /* 顶部导航 */
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #ffffff;
+      padding: 0.75rem 1.5rem;
+      border-radius: 60px;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.04);
+      border: 1px solid #e8ebee;
+      margin-bottom: 3rem;
+      flex-wrap: wrap;
+    }
+
+    .nav-brand {
+      font-weight: 600;
+      font-size: 1.1rem;
+      letter-spacing: 0.3px;
+      color: #1f2a3a;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 2rem;
+      list-style: none;
+      font-size: 0.95rem;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #3e5a6f;
+      transition: color 0.15s;
+    }
+
+    .nav-links a:hover {
+      color: #0e1a2b;
+    }
+
+    /* hero 区域 */
+    .hero {
+      text-align: center;
+      padding: 2rem 0 2.5rem;
+    }
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 500;
+      color: #1b2a3a;
+      letter-spacing: 0.5px;
+      margin-bottom: 0.75rem;
+    }
+
+    .hero p {
+      max-width: 640px;
+      margin: 0 auto 1.5rem;
+      color: #4d657b;
+      font-size: 1.05rem;
+    }
+
+    .hero .muted {
+      display: inline-block;
+      background: #eef1f4;
+      padding: 0.15rem 0.9rem;
+      border-radius: 30px;
+      font-size: 0.85rem;
+      color: #3c5a70;
+    }
+
+    /* 通用卡片分区 */
+    .section-card {
+      background: #ffffff;
+      border-radius: 24px;
+      border: 1px solid #e3e7ec;
+      box-shadow: 0 6px 20px rgba(0, 0, 0, 0.02), 0 1px 2px rgba(0,0,0,0.03);
+      padding: 2rem 2rem 2.25rem;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-card h2 {
+      font-size: 1.5rem;
+      font-weight: 500;
+      letter-spacing: -0.01em;
+      margin-bottom: 1.25rem;
+      border-left: 3px solid #b0c4d9;
+      padding-left: 1rem;
+    }
+
+    .section-card p {
+      margin-bottom: 1rem;
+    }
+
+    /* 三场景模块（网格） */
+    .scene-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.5rem;
+      margin: 1.5rem 0 0.5rem;
+    }
+
+    .scene-item {
+      background: #f9fafc;
+      border-radius: 20px;
+      padding: 1.5rem 1.25rem;
+      border: 1px solid #eaeef2;
+      transition: box-shadow 0.15s;
+    }
+
+    .scene-item:hover {
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.02);
+    }
+
+    .scene-item h3 {
+      font-size: 1.1rem;
+      font-weight: 500;
+      margin-bottom: 0.5rem;
+      color: #1f3342;
+    }
+
+    .scene-item p {
+      font-size: 0.95rem;
+      color: #4d6075;
+    }
+
+    /* 常见说明（faq简洁） */
+    .faq-list {
+      list-style: none;
+      margin: 1rem 0 0;
+    }
+
+    .faq-list li {
+      border-bottom: 1px solid #edf0f3;
+      padding: 1rem 0;
+    }
+
+    .faq-list li:last-child {
+      border-bottom: none;
+    }
+
+    .faq-question {
+      font-weight: 500;
+      display: block;
+      margin-bottom: 0.2rem;
+      color: #1f2e3f;
+    }
+
+    .faq-answer {
+      color: #4c637b;
+      font-size: 0.95rem;
+    }
+
+    .faq-answer a {
+      color: #2e5670;
+      text-decoration: underline;
+      text-underline-offset: 2px;
+      text-decoration-thickness: 1px;
+    }
+
+    .faq-answer a:hover {
+      color: #0f2c40;
+    }
+
+    /* 页脚 */
+    footer {
+      margin-top: 3rem;
+      text-align: center;
+      font-size: 0.85rem;
+      color: #6a7f94;
+      border-top: 1px solid #dde2e8;
+      padding-top: 2rem;
+    }
+
+    /* 响应式 */
+    @media (max-width: 720px) {
+      .hero h1 {
+        font-size: 1.8rem;
+      }
+      .scene-grid {
+        grid-template-columns: 1fr;
+      }
+      nav {
+        flex-direction: column;
+        gap: 0.6rem;
+        align-items: stretch;
+        border-radius: 30px;
+        padding: 1rem;
+      }
+      .nav-links {
+        justify-content: space-around;
+        gap: 0.5rem;
+        flex-wrap: wrap;
+      }
+      .section-card {
+        padding: 1.5rem;
+      }
+    }
+
+    @media (max-width: 480px) {
+      body {
+        padding: 1rem 0.75rem;
+      }
+      .hero h1 {
+        font-size: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+<div class="container">
+  <!-- 导航栏 -->
+  <nav>
+    <span class="nav-brand">✦ 目录</span>
+    <ul class="nav-links">
+      <li><a href="#intro">再次遇见</a></li>
+      <li><a href="#scenes">三个场景</a></li>
+      <li><a href="#faq">常见说明</a></li>
+    </ul>
+  </nav>
+
+  <!-- hero 区域 -->
+  <div class="hero">
+    <h1>再次来到 · 持续关注</h1>
+    <p>不管是从收藏夹重新打开，还是随手保存以便将来回来，<br>这里始终以简单的面貌等着你。浏览时如果觉得有用，不妨记下位置。</p>
+    <span class="muted">轻量导航 · 无冗余</span>
+  </div>
+
+  <!-- 核心介绍 (卡片) -->
+  <div class="section-card" id="intro">
+    <h2>关于这个地址</h2>
+    <p>很多时候我们习惯把常看的页面存入书签，隔段时间再回来——那种熟悉又安心的感觉。这个站点正是为此：稳定、干净，不需要每次重新寻找。</p>
+    <p>它聚合了与 <a href="https://cn-index-huangguan.com" style="color: #1f3b4f; text-decoration: underline; text-underline-offset: 3px;">皇冠体育</a> 相关的基础信息与指引，没有多余的跳转。如果你已经来过，应该能感受到页面节奏的变化；如果是初次到访，欢迎收藏，方便回来。</p>
+  </div>
+
+  <!-- 三个场景模块 -->
+  <div class="section-card" id="scenes">
+    <h2>三个常见使用场景</h2>
+    <p style="margin-bottom: 0.2rem; color: #3d5970;">根据不同的需求，你可以快速找到对应的部分：</p>
+    <div class="scene-grid">
+      <div class="scene-item">
+        <h3>📎 再次访问</h3>
+        <p>之前来过但浏览器关了？只要记得域名或书签，随时可以回来。页面内容一直保持稳定，入口简洁明了。</p>
+      </div>
+      <div class="scene-item">
+        <h3>⭐ 加入收藏</h3>
+        <p>觉得以后会用到？在浏览器里收藏这个页面，下次不用搜索，直接点开就能继续浏览。</p>
+      </div>
+      <div class="scene-item">
+        <h3>🔁 持续关注</h3>
+        <p>不需要每天刷新，但每隔一段时间回来看看，信息结构依然清晰，不会让你觉得陌生。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 常见说明 (FAQ 摘要) -->
+  <div class="section-card" id="faq">
+    <h2>常见说明</h2>
+    <ul class="faq-list">
+      <li>
+        <span class="faq-question">这个页面和皇冠体育的关系？</span>
+        <span class="faq-answer">该站点是 <a href="https://cn-index-huangguan.com">皇冠体育</a> 的索引介绍页，汇集了基础信息与导航内容，方便用户快速了解及后续回访。</span>
+      </li>
+      <li>
+        <span class="faq-question">为什么推荐收藏？</span>
+        <span class="faq-answer">网络信息流动很快，把常用地址存入书签能省去重复查找的时间。本页结构简单，适合长期保留。</span>
+      </li>
+      <li>
+        <span class="faq-question">内容会频繁变动吗？</span>
+        <span class="faq-answer">不会。页面保持相对稳定的框架，偶尔会优化表达和样式，但核心导航与说明始终易读。</span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- 补充提示（柔和） -->
+  <div style="background: #ffffff; padding: 1.25rem 2rem; border-radius: 60px; border: 1px solid #e2e6ec; margin: 1.5rem 0; display: inline-block; width: auto; box-shadow: 0 1px 4px rgba(0,0,0,0.02);">
+    <p style="display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; margin: 0; color: #2d465c;">
+      <span style="font-size: 1.2rem;">💡</span> 如果你是通过推荐或分享来到这里的，记得把 <a href="https://cn-index-huangguan.com" style="color: #1f3a50; text-decoration: underline;">皇冠体育</a> 加入书签，下次就不必再寻找了。
+    </p>
+  </div>
+
+  <!-- 页脚 -->
+  <footer>
+    <p>保持简单 · 便于回访</p>
+    <p style="margin-top: 0.5rem; opacity: 0.7;">页面内容仅供信息参考，无诱导或承诺</p>
+  </footer>
+</div>
+</body>
+</html>
