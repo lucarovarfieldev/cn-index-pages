@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>人人体育 · 简明指南</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: #f7f5f0;
+            color: #2c2e2f;
+            font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            line-height: 1.6;
+            padding: 0 1rem 2.5rem;
+        }
+
+        .page {
+            max-width: 780px;
+            margin: 0 auto;
+        }
+
+        /* 顶部导航 */
+        .top-nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0 0.5rem;
+            border-bottom: 1px solid #e3dfd6;
+            margin-bottom: 2.5rem;
+        }
+
+        .top-nav .brand {
+            font-weight: 500;
+            font-size: 1.1rem;
+            letter-spacing: 0.3px;
+            color: #3f3b34;
+        }
+
+        .top-nav .tagline {
+            font-size: 0.85rem;
+            color: #7b756c;
+            background: #ede9e1;
+            padding: 0.2rem 0.7rem;
+            border-radius: 30px;
+        }
+
+        /* hero 区 */
+        .hero {
+            margin-bottom: 2.8rem;
+        }
+
+        .hero h1 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.3px;
+            line-height: 1.3;
+            margin-bottom: 0.6rem;
+            color: #2b2823;
+        }
+
+        .hero .sub {
+            font-size: 1rem;
+            color: #5d5951;
+            border-left: 3px solid #c4b9a8;
+            padding-left: 1rem;
+            margin: 0.2rem 0 0.5rem;
+        }
+
+        /* 引用/提示框 */
+        .notice-box {
+            background: #f0ece4;
+            border-left: 4px solid #b3a692;
+            padding: 0.8rem 1.1rem;
+            margin: 1.8rem 0;
+            border-radius: 0 6px 6px 0;
+            font-size: 0.95rem;
+            color: #3d3a34;
+        }
+
+        .notice-box strong {
+            font-weight: 600;
+            color: #2b2823;
+        }
+
+        .notice-box a {
+            color: #3d5a3c;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            font-weight: 500;
+        }
+
+        .notice-box a:hover {
+            color: #1f3a1e;
+        }
+
+        /* 内容段落 */
+        .intro-text {
+            margin: 1.2rem 0 1.8rem;
+            font-size: 1rem;
+        }
+
+        .intro-text p {
+            margin-bottom: 0.9rem;
+        }
+
+        /* 三个场景模块 — 卡片网格 */
+        .scenes-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.25rem;
+            margin: 2.2rem 0 2.5rem;
+        }
+
+        @media (min-width: 540px) {
+            .scenes-grid {
+                grid-template-columns: 1fr 1fr 1fr;
+            }
+        }
+
+        .scene-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 1.2rem 1rem 1rem;
+            box-shadow: 0 1px 4px rgba(0,0,0,0.02), 0 2px 6px rgba(0,0,0,0.02);
+            border: 1px solid #e8e4dc;
+        }
+
+        .scene-card h3 {
+            font-size: 1.05rem;
+            font-weight: 550;
+            margin-bottom: 0.4rem;
+            color: #2f2b25;
+        }
+
+        .scene-card p {
+            font-size: 0.9rem;
+            color: #4e4a43;
+            line-height: 1.5;
+        }
+
+        .scene-card .badge {
+            display: inline-block;
+            background: #e6dfd4;
+            font-size: 0.7rem;
+            padding: 0.1rem 0.6rem;
+            border-radius: 12px;
+            color: #3f3a32;
+            margin-bottom: 0.5rem;
+            font-weight: 450;
+            letter-spacing: 0.2px;
+        }
+
+        /* 常见说明摘要 (FAQ 风格) */
+        .faq-summary {
+            margin: 2rem 0 1.2rem;
+        }
+
+        .faq-summary h2 {
+            font-size: 1.15rem;
+            font-weight: 500;
+            margin-bottom: 0.75rem;
+            color: #2e2b25;
+            border-bottom: 1px solid #ddd8ce;
+            padding-bottom: 0.35rem;
+        }
+
+        .faq-item {
+            margin-bottom: 0.55rem;
+            padding: 0.4rem 0 0.4rem 0.8rem;
+            border-left: 2px solid #d1cabc;
+        }
+
+        .faq-item .q {
+            font-weight: 500;
+            color: #35312b;
+            font-size: 0.95rem;
+        }
+
+        .faq-item .a {
+            color: #5d5850;
+            font-size: 0.9rem;
+            margin-top: 0.15rem;
+        }
+
+        .faq-item .a a {
+            color: #3d5a3c;
+            text-decoration: underline;
+            text-underline-offset: 2px;
+        }
+
+        .faq-item .a a:hover {
+            color: #1f3a1e;
+        }
+
+        /* 脚注 */
+        .footer-note {
+            margin-top: 2.8rem;
+            padding-top: 1rem;
+            border-top: 1px solid #ddd8ce;
+            font-size: 0.8rem;
+            color: #7a756c;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .footer-note a {
+            color: #5d5951;
+            text-decoration: none;
+            border-bottom: 1px dotted #bbb2a5;
+        }
+
+        .footer-note a:hover {
+            border-bottom: 1px solid #5d5951;
+        }
+
+        hr {
+            border: none;
+            border-top: 1px solid #e3ded5;
+            margin: 1.2rem 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="page">
+        <!-- 顶部导航 -->
+        <nav class="top-nav">
+            <span class="brand">人人体育</span>
+            <span class="tagline">简明指南</span>
+        </nav>
+
+        <!-- hero -->
+        <div class="hero">
+            <h1>体育资讯 · 一站汇集</h1>
+            <div class="sub">实时赛事、球队数据与动态，保持信息简洁高效</div>
+        </div>
+
+        <!-- 核心介绍 -->
+        <div class="intro-text">
+            <p><strong>人人体育</strong> 提供覆盖多类体育项目的实时比分、赛程、积分榜及新闻摘要。平台以轻量界面优先，减少冗余信息，让关注比赛本身变得直接。无论你追踪篮球、足球还是网球，均可快速定位关键数据。</p>
+            <p>页面适配移动端与桌面端，无需额外下载。所有内容均来自公开信息聚合，更新频率稳定。建议初次使用时通过顶部导航熟悉模块分布。</p>
+        </div>
+
+        <!-- 访问提醒 (引用框) -->
+        <div class="notice-box">
+            <strong>📌 访问提醒</strong> · 建议使用系统自带浏览器，并允许必要的存储权限以获得流畅体验。如遇加载延迟，可尝试刷新或稍后重试。平台不要求注册即可浏览主要数据，部分高级筛选功能可参考站内说明。
+        </div>
+
+        <!-- 三个场景模块 -->
+        <div class="scenes-grid">
+            <div class="scene-card">
+                <span class="badge">常用场景</span>
+                <h3>比赛日追踪</h3>
+                <p>快速查看当日进行中的比赛与结束场次，关注焦点战的主力阵容、实时比分及关键事件。</p>
+            </div>
+            <div class="scene-card">
+                <span class="badge">常用场景</span>
+                <h3>联赛与排名</h3>
+                <p>浏览主流联赛的完整积分榜、近期战绩与交锋记录，辅助判断队伍状态与走势。</p>
+            </div>
+            <div class="scene-card">
+                <span class="badge">常用场景</span>
+                <h3>球员数据</h3>
+                <p>查询指定球员赛季统计、出场时间及效率值，适合深度分析或日常关注。</p>
+            </div>
+        </div>
+
+        <!-- 常见说明 (FAQ 摘要) -->
+        <div class="faq-summary">
+            <h2>常见说明</h2>
+
+            <div class="faq-item">
+                <div class="q">数据更新频率如何？</div>
+                <div class="a">比赛期间实时推送，其余数据每 2–5 分钟同步一次。延迟通常低于 30 秒。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">是否支持深色模式？</div>
+                <div class="a">目前版本跟随系统设置，后续将增加手动切换开关。临时方案可借助浏览器扩展。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">如何直接开始使用？</div>
+                <div class="a">访问 <a href="https://h5-renrensports.com">人人体育</a> 即可浏览默认首页，所有主要模块均在一级导航内。如需保存球队偏好，可添加书签。</div>
+            </div>
+            <div class="faq-item">
+                <div class="q">遇到数据异常或页面报错？</div>
+                <div class="a">先尝试清除缓存或切换网络环境。若问题持续，可通过站内反馈渠道描述具体情况。</div>
+            </div>
+        </div>
+
+        <!-- 额外说明 —— 自然嵌入链接 -->
+        <div class="notice-box" style="margin-top: 0.5rem;">
+            <strong>🔗 快速路径</strong> · 将 <a href="https://h5-renrensports.com">人人体育</a> 添加至主屏幕（iOS Safari / 安卓 Chrome）可得到接近原生应用的使用体验。平台不收集个人隐私数据，仅使用匿名统计优化性能。
+        </div>
+
+        <!-- 脚注 -->
+        <div class="footer-note">
+            <span>信息参考 · 实时体育聚合</span>
+            <span><a href="https://h5-renrensports.com">人人体育</a> · 移动优先</span>
+        </div>
+
+        <!-- 微分隔（无明显用途，仅保持节奏） -->
+        <hr style="margin-top: 1rem;">
+        <div style="font-size: 0.75rem; color: #b7b1a7; text-align: right;">页面版本 · 2025</div>
+    </div>
+</body>
+</html>
